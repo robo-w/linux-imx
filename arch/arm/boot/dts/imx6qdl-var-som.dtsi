@@ -429,8 +429,8 @@
 				/* for Bluetooth/wifi enable */
 				MX6QDL_PAD_SD3_DAT6__GPIO6_IO18		0x1b0b1
 				/* SDMMC2 CD/WP */
-				MX6QDL_PAD_KEY_COL4__GPIO4_IO14		0x80000000
-				MX6QDL_PAD_KEY_ROW4__GPIO4_IO15		0x80000000
+				MX6QDL_PAD_EIM_EB3__GPIO2_IO31          0x80000000
+				/*MX6QDL_PAD_KEY_ROW4__GPIO4_IO15       0x80000000*/
 				/* USBOTG ID pin */
 				/*MX6QDL_PAD_GPIO_4__GPIO1_IO04		0x80000000*/
 				/* PMIC INT */
@@ -811,8 +811,9 @@
 &usdhc2 {	/* uSDHC2, MMC/SD card */
 	pinctrl-names = "default";
 	pinctrl-0 = <&pinctrl_usdhc2_2>;
-	cd-gpios = <&gpio4 14 GPIO_ACTIVE_LOW>;
-	wp-gpios = <&gpio4 15 GPIO_ACTIVE_HIGH>;
+	/* Original: gpio4 14 */
+	cd-gpios = <&gpio2 31 GPIO_ACTIVE_LOW>;
+	/* wp-gpios = <&gpio4 15 GPIO_ACTIVE_HIGH>; */
 	no-1-8-v;
 	keep-power-in-suspend;
 	enable-sdio-wakeup;
